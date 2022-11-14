@@ -1,0 +1,36 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Todo {
+  id: Int!
+  description: String!
+  done: Boolean!
+}
+
+type Query {
+  """Return string"""
+  firstquery: String!
+
+  """number random"""
+  randomnumber: Float!
+  number(to: Int): Int!
+  all(done: Boolean, description: String = null): [Todo!]!
+  todo(id: Int!): Todo!
+}
+
+type Mutation {
+  createTodo(bodyTodo: CreateTodoInput!): Todo!
+  update(updateTodo: UpdateInputTodo!): Todo!
+}
+
+input CreateTodoInput {
+  """Description of todo"""
+  description: String!
+}
+
+input UpdateInputTodo {
+  description: String
+  done: Boolean
+  id: Int!
+}
